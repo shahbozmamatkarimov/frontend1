@@ -1,0 +1,541 @@
+* {
+    font-size: 25px;
+    font-family: 'Noto Sans';
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    background-color: rgba(67, 62, 62, 0.123);
+    overflow-x: hidden !important;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 200px;
+    background-color: #FFFFFF;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+}
+
+@media (max-width: 1260px) {
+    .logo {
+        position: absolute;
+        left: 40px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    ul {
+        gap: 1.5rem !important;
+    }
+}
+
+
+.nav li {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #232730;
+}
+
+.nav li a:hover {
+    color: #F8D7A4;
+}
+
+section {
+    padding-top: 150px;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.logo b {
+    color: rgb(134, 70, 24);
+}
+
+.logo i {
+    color: rgb(186, 87, 21);
+    font-weight: 500;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 3rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 200px;
+}
+
+.container div .title {
+    position: absolute;
+    width: 457px;
+    height: 260px;
+    left: 179px;
+    top: 201.59px;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 82px;
+    color: #232730;
+    border-left: 10px solid #F8D7A4;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    top: 150px;
+}
+
+.carimage {
+    position: absolute;
+    top: 200px;
+}
+
+@media (max-width: 1260px) {
+    .container {
+        padding-top: 30px !important;
+        padding: 0;
+    }
+
+    .container div .title {
+        top: 80.59px;
+        line-height: 50px;
+        font-size: 45px;
+        left: 20px;
+    }
+
+    .carimage {
+        position: relative;
+        top: 0px;
+        height: 300px;
+    }
+
+    .back-car {
+        display: none;
+    }
+
+    .about {
+        padding: 0 40px !important;
+        /* color: #A55C30;
+        font-size: 56px; */
+    }
+
+    .services h1, .fleet>h1, .testimonials1>h1, .contacts>h1 {
+        padding: 25px !important;
+    }
+}
+
+.about {
+    padding: 0 150px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #232730;
+    padding-bottom: 200px;
+}
+
+.about-title {
+    padding: 0 150px;
+    color: #A55C30;
+    font-size: 56px;
+}
+
+.about-image {
+    width: 40%;
+    height: 50%;
+}
+
+.services {
+    background-image: url("./images/Rectangle 3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.service {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.005em;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1200px) {
+    .service {
+        flex-direction: column;
+    }
+
+    .service-item {
+        width: 300px !important;
+        margin: 0 auto;
+    }
+}
+
+.service-item {
+    width: 25%;
+}
+
+.service-title p {
+    font-weight: 100;
+    text-align: center;
+}
+
+.service-title p b {
+    display: inline-block;
+    margin: 40px 0;
+}
+
+.service-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.services h1, .fleet>h1, .testimonials1>h1, .contacts>h1 {
+    color: #A55C30;
+    text-align: center;
+    font-size: 48px;
+    padding: 50px;
+}
+
+.star {
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+    margin-left: -35px;
+}
+
+.star svg {
+    margin: 3px 0;
+}
+
+.fleet {
+    padding-bottom: 100px;
+}
+
+.fleet-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fleet-item {
+    padding: 50px;
+    text-align: center;
+    margin: 20px;
+    box-shadow: 3px 5px 8px grey;
+    height: 400px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.fleet-item:hover {
+    box-shadow: 1px 1px 1px grey;
+}
+
+.fleet-item h1 {
+    color: #A55C30;
+    margin: 0;
+    padding: 0;
+}
+
+.fleet-item h6 {
+    font-size: 15px;
+    margin: 10px;
+    padding: 0;
+    align-items: center;
+}
+
+.fleet-title p {
+    font-size: 16px;
+    text-align: start;
+}
+
+.fleet-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fleet-footer-item svg, .fleet-footer-item p {
+    display: inline-block;
+}
+
+.fleet-slide {
+    background: #F8D7A4;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.fleet-item:nth-child(1), .fleet-item:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.fleet-list li {
+    padding: 8px;
+    background: grey;
+    border-radius: 50%;
+    display: flex;
+}
+
+.fleet-list li:nth-child(2) {
+    background: #F8D7A4;
+}
+
+.fleet-list ul {
+    justify-content: center;
+    gap: 10px;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 50px;
+}
+
+.statistics h1 {
+    font-size: 50px;
+}
+
+.testimonials1 {
+    background: #F8D7A4;
+    padding-bottom: 100px;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 150px;
+    background: #FFFFFF;
+}
+
+.testimonials>div {
+    text-align: center;
+    padding: 100px 120px;
+}
+
+.testimonials h1 {
+    margin-bottom: -20px;
+    display: flex;
+}
+
+.testimonials1>h1 {
+    margin: 0;
+}
+
+
+.testimonials-list li {
+    padding: 8px;
+    background: grey;
+    border-radius: 50%;
+    display: flex;
+}
+
+.testimonials-list li:nth-child(2) {
+    background: #A55C30;
+}
+
+.testimonials-list ul {
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact {
+    background-image: url(./images/Rectangle\ 3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px;
+    text-align: center;
+}
+
+.contact h1, h6 {
+    margin: 0;
+}
+
+.contact h1 {
+    font-size: 50px;
+}
+
+.contacts-form {
+    text-align: center;
+    background: #E8EAEC;
+    width: 600px;
+    padding: 70px 30px;
+    margin: 0 auto;
+}
+
+.contacts input, textarea {
+    display: block;
+    padding: 10px 40px;
+    margin: 20px auto;
+    width: 350px;
+    font-size: 18px;
+}
+
+.contacts {
+    padding-bottom: 100px;
+}
+
+input:placeholder-shown, textarea:placeholder-shown {
+    font-family: 'Lato';
+    opacity: 0.8;
+    color: #9F9F9F;
+}
+
+input[type="submit"] {
+    background: #A55C30;
+    width: 200px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background: #000;
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Nunito Sans';
+}
+
+.footer h1 {
+    color: #A55C30;
+}
+
+.footer div {
+    margin: 25px;
+}
+
+@media (max-width: 1260px) {
+    .testimonials {
+        flex-direction: column;
+        margin: 20px 40px;
+    }
+
+    .testimonials>div {
+        text-align: center;
+        padding: 20px 120px;
+    }
+
+    .avatar {
+        order: 1;
+    }
+
+    .contacts-form {
+        padding: 10px 10px !important;
+        width: 60% !important;
+        margin: 0 auto;
+    }
+
+    .contacts input, textarea {
+        width: 80% !important;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer>div {
+        margin: 0 auto;
+    }
+
+    .subscribe {
+        margin: 20px !important;
+    }
+
+    .brands {
+        order: 1;
+    }
+}
+
+.lux {
+    width: 350px;
+    text-align: center;
+}
+
+.news {
+    text-align: center;
+}
+
+.news p {
+    margin: 0 auto;
+    width: 350px;
+}
+
+.news-form {
+    display: flex;
+}
+
+input {
+    border: none;
+}
+
+.news-form input[type="email"] {
+    margin-right: 20px;
+    /* margin-left: -80px; */
+    padding: 10px 20px;
+}
+
+.brands {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    height: 200px;
+}
+
+.brands i {
+    font-size: 35px;
+    margin: 25px;
+}
+
+.footer-contact {
+    min-width: 250px;
+}
+
+.footer-contact h1 {
+    text-align: center;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    padding: 20px;
+}
