@@ -11,27 +11,41 @@ body, html {
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 200px;
-    background-color: #FFFFFF;
     position: fixed;
+    background: white;
     z-index: 99;
+    height: 50px;
     width: 100%;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.874);
 }
 
-@media (max-width: 1260px) {
-    .logo {
-        position: absolute;
-        left: 40px;
-    }
+.dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
-    ul {
-        gap: 1.5rem !important;
-    }
+.dropdown-content {
+  display: none;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.fa-bars {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 }
 
 
@@ -39,14 +53,15 @@ body, html {
     cursor: pointer;
 }
 
+.nav li a:hover {
+    color: #F8D7A4;
+}
+
 a {
     text-decoration: none;
     color: #232730;
 }
 
-.nav li a:hover {
-    color: #F8D7A4;
-}
 
 section {
     padding-top: 150px;
@@ -54,6 +69,8 @@ section {
 
 .logo {
     cursor: pointer;
+    position: absolute;
+    top: 10px;
 }
 
 .logo b {
@@ -65,7 +82,10 @@ section {
     font-weight: 500;
 }
 
-ul {
+.nav ul {
+    position: absolute;
+    top: -10px;
+    right: 20px;
     display: flex;
     justify-content: space-evenly;
     list-style: none;
@@ -79,9 +99,20 @@ ul {
     padding-left: 200px;
 }
 
+@media (max-width: 500px) {
+    .title {
+        line-height: 40px !important;
+        font-size: 40px !important;
+    }
+
+    .contact h1, h6 {
+        font-size: 18px !important;
+    }
+}
+
 .container div .title {
     position: absolute;
-    width: 457px;
+    max-width: 350px;
     height: 260px;
     left: 179px;
     top: 201.59px;
@@ -103,40 +134,30 @@ ul {
 
 .carimage {
     position: absolute;
-    top: 200px;
 }
 
-@media (max-width: 1260px) {
-    .container {
-        padding-top: 30px !important;
-        padding: 0;
-    }
-
-    .container div .title {
-        top: 80.59px;
-        line-height: 50px;
-        font-size: 45px;
-        left: 20px;
-    }
-
+@media (max-width: 768px) {
     .carimage {
-        position: relative;
-        top: 0px;
-        height: 300px;
+        top: 130px !important;
     }
 
-    .back-car {
-        display: none;
+    .container {
+        margin-top: 100px;
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 90% !important;
     }
 
     .about {
-        padding: 0 40px !important;
-        /* color: #A55C30;
-        font-size: 56px; */
+        text-align: center;
     }
+}
 
-    .services h1, .fleet>h1, .testimonials1>h1, .contacts>h1 {
-        padding: 25px !important;
+@media (max-width: 576px) {
+    .statistics {
+        flex-direction: column;
     }
 }
 
@@ -153,7 +174,8 @@ ul {
 }
 
 .about-title {
-    padding: 0 150px;
+    width: 200px;
+    margin: 0 auto;
     color: #A55C30;
     font-size: 56px;
 }
@@ -178,17 +200,6 @@ ul {
     line-height: 24px;
     letter-spacing: -0.005em;
     color: #FFFFFF;
-}
-
-@media (max-width: 1200px) {
-    .service {
-        flex-direction: column;
-    }
-
-    .service-item {
-        width: 300px !important;
-        margin: 0 auto;
-    }
 }
 
 .service-item {
@@ -241,8 +252,8 @@ ul {
     padding: 50px;
     text-align: center;
     margin: 20px;
+    height: 460px;
     box-shadow: 3px 5px 8px grey;
-    height: 400px;
     cursor: pointer;
     transition: 1s;
 }
@@ -283,7 +294,6 @@ ul {
     border: 1px solid #FFFFFF;
     border-radius: 50%;
     padding: 20px;
-    margin-top: 60px;
 }
 
 .fleet-item:nth-child(1), .fleet-item:last-child {
@@ -297,9 +307,11 @@ ul {
 
 .fleet-list li {
     padding: 8px;
+    margin-top: 50px;
     background: grey;
     border-radius: 50%;
-    display: flex;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .fleet-list li:nth-child(2) {
@@ -307,8 +319,7 @@ ul {
 }
 
 .fleet-list ul {
-    justify-content: center;
-    gap: 10px;
+    text-align: center;
 }
 
 .statistics {
@@ -338,6 +349,14 @@ ul {
     background: #FFFFFF;
 }
 
+@media (max-width: 576px){
+    .testimonials>div {
+        width: 150%;
+        padding: 0;
+        margin: 0;
+    }
+} 
+
 .testimonials>div {
     text-align: center;
     padding: 100px 120px;
@@ -357,7 +376,7 @@ ul {
     padding: 8px;
     background: grey;
     border-radius: 50%;
-    display: flex;
+    display: inline-block;
 }
 
 .testimonials-list li:nth-child(2) {
@@ -365,8 +384,7 @@ ul {
 }
 
 .testimonials-list ul {
-    justify-content: center;
-    gap: 10px;
+    text-align: center;
 }
 
 .contact {
@@ -378,6 +396,7 @@ ul {
     padding: 100px;
     text-align: center;
 }
+
 
 .contact h1, h6 {
     margin: 0;
@@ -417,6 +436,7 @@ input[type="submit"] {
     background: #A55C30;
     width: 200px;
     padding: 10px;
+    margin: 20px;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -441,7 +461,144 @@ footer {
     margin: 25px;
 }
 
+.lux {
+    max-width: 350px;
+    text-align: center;
+}
+
+.news {
+    text-align: center;
+}
+
+.news p {
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+.news-form {
+    display: flex;
+}
+
+input {
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .service-item{
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    input {
+        width: 120%;
+    }
+
+    .carimage{
+        left: 100px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    .service p {
+        font-size: 15px;
+    }
+}
+
+.news-form input[type="email"] {
+    margin-right: 20px;
+    padding: 10px 20px;
+}
+
+.brands {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    height: 200px;
+}
+
+.brands i {
+    font-size: 35px;
+    margin: 25px;
+}
+
+.footer-contact {
+    max-width: 300px;
+}
+
+.footer-contact h1 {
+    text-align: center;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    padding: 20px;
+}
+
+@media (max-width: 1200px) {
+    .nav ul {
+        gap: 1.5rem !important;
+    }
+}
+
+
 @media (max-width: 1260px) {
+    .logo {
+        position: absolute;
+        left: 40px;
+    }
+
+    .container {
+        padding-top: 30px !important;
+        padding: 0;
+    }
+
+    .container div .title {
+        top: 80.59px;
+        line-height: 50px;
+        font-size: 45px;
+        left: 20px;
+    }
+
+    .carimage {
+        position: relative;
+        top: 60px !important;
+        height: 300px;
+    }
+
+    .back-car {
+        display: none;
+    }
+
+    .about {
+        padding: 0 40px !important;
+        /* color: #A55C30;
+        font-size: 56px; */
+    }
+
+    .services h1, .fleet>h1, .testimonials1>h1, .contacts>h1 {
+        padding: 25px !important;
+    }
+
+    .service {
+        flex-direction: column;
+    }
+
+    .service-item {
+        max-width: 300px !important;
+        margin: 0 auto;
+    }
+
     .testimonials {
         flex-direction: column;
         margin: 20px 40px;
@@ -483,59 +640,15 @@ footer {
     }
 }
 
-.lux {
-    width: 350px;
-    text-align: center;
-}
 
-.news {
-    text-align: center;
-}
+@media (max-width: 768px) {
+    .contacts input, textarea {
+        width: 90% !important;
+    }
 
-.news p {
-    margin: 0 auto;
-    width: 350px;
-}
-
-.news-form {
-    display: flex;
-}
-
-input {
-    border: none;
-}
-
-.news-form input[type="email"] {
-    margin-right: 20px;
-    /* margin-left: -80px; */
-    padding: 10px 20px;
-}
-
-.brands {
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-    height: 200px;
-}
-
-.brands i {
-    font-size: 35px;
-    margin: 25px;
-}
-
-.footer-contact {
-    min-width: 250px;
-}
-
-.footer-contact h1 {
-    text-align: center;
-}
-
-.footer-contact p {
-    display: flex;
-    align-items: center;
-}
-
-.footer-contact p i {
-    padding: 20px;
+    .contacts-form {
+        padding: 10px 10px !important;
+        width: 90% !important;
+        margin: 0 auto;
+    }
 }
