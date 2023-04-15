@@ -79,7 +79,7 @@ function car() {
         </div>
     `
 
-    if (width <= 76800) {
+    if (width <= 768) {
         nav.innerHTML = `
         <div class="logo">
             <a href="#"><i><b>Lux</b>Chaffeur</i></a>
