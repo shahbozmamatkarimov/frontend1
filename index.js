@@ -84,10 +84,26 @@ function car() {
         <div class="logo">
             <a href="#"><i><b>Lux</b>Chaffeur</i></a>
         </div>
-        <div class="dropdown">
+        <div class="dropdown" onclick="openCar(this)">
                 <i class="fa fa-bars"></i>
-                <div class="dropdown-content">
-                    <p>Hello World!</p>
+                <div class="dropdown-content" id="content">
+                    <ul class="responsive-menu">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Fleet</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         `
@@ -124,3 +140,13 @@ window.addEventListener("resize", () => {
 window.addEventListener("load", () => {
     car()
 })
+
+
+function openCar(val) {
+    console.log(content.className.includes('display'));
+    if (content.className.includes('display')) {
+        content.className = "dropdown-content"
+        return
+    }
+    content.className += " display"
+}

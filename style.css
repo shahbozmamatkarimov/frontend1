@@ -19,26 +19,38 @@ body, html {
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.874);
 }
 
+.responsive-menu {
+    position: relative !important;
+    flex-direction: column;
+}
+
 .dropdown {
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  display: inline-block;
-  height: 20px;
-  width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 200px;
 }
 
 .dropdown-content {
-  display: none;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-  cursor: pointer;
+    display: none;   
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    background: rgba(12, 12, 12, 0.847);
+    cursor: pointer;
+    position: relative;
+    top: 50px;
+    right: 20px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.display {
+    display: block;
+}
+
+.dropdown-content ul li a{
+    color: #FFFFFF;
 }
 
 .fa-bars {
@@ -88,8 +100,11 @@ section {
     right: 20px;
     display: flex;
     justify-content: space-evenly;
-    list-style: none;
     gap: 3rem;
+}
+
+ul {
+    list-style: none;
 }
 
 .container {
@@ -113,7 +128,6 @@ section {
 .container div .title {
     position: absolute;
     max-width: 350px;
-    height: 260px;
     left: 179px;
     top: 201.59px;
     font-family: 'Lora';
@@ -129,18 +143,24 @@ section {
 }
 
 .img {
-    top: 150px;
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+.img svg{
+    position: relative;
+    z-index: 0;
+    margin-top: -100px;
+    margin-right: -100px;
 }
 
 .carimage {
     position: absolute;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {
-    .carimage {
-        top: 130px !important;
-    }
-
     .container {
         margin-top: 100px;
         flex-direction: column;
@@ -349,13 +369,21 @@ section {
     background: #FFFFFF;
 }
 
-@media (max-width: 576px){
+@media (max-width: 576px) {
     .testimonials>div {
         width: 150%;
         padding: 0;
         margin: 0;
     }
-} 
+}
+
+@media (max-width: 400px) {
+    .testimonials>div {
+        width: 200%;
+        padding: 0;
+        margin: 0;
+    }
+}
 
 .testimonials>div {
     text-align: center;
@@ -436,7 +464,7 @@ input[type="submit"] {
     background: #A55C30;
     width: 200px;
     padding: 10px;
-    margin: 20px;
+    margin: 20px auto;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -484,7 +512,7 @@ input {
 }
 
 @media (max-width: 768px) {
-    .service-item{
+    .service-item {
         width: 80%;
     }
 }
@@ -494,12 +522,29 @@ input {
         width: 120%;
     }
 
-    .carimage{
-        left: 100px;
+    .fleet-title p {
+        text-align: center !important;
+    }
+
+    .fleet-footer {
+        justify-content: space-around;
+    }
+
+    .carimage {
+        left: 300px !important;
+        top: 100px;
+    }
+
+    .img {
+        left: 100px !important;
     }
 
     input[type="submit"] {
-        width: 100%;
+        width: 80%;
+    }
+
+    .news input[type="email"] {
+        width: 90%;
     }
 
     .service-item {
@@ -512,8 +557,8 @@ input {
 }
 
 .news-form input[type="email"] {
-    margin-right: 20px;
     padding: 10px 20px;
+    margin: 0 auto;
 }
 
 .brands {
@@ -570,10 +615,17 @@ input {
         left: 20px;
     }
 
+    .img {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
     .carimage {
         position: relative;
-        top: 60px !important;
-        height: 300px;
+        top: 10px !important;
+        left: 20px !important;
+        height: 500px;
     }
 
     .back-car {
@@ -642,6 +694,10 @@ input {
 
 
 @media (max-width: 768px) {
+    .carimage{
+        height: 300px;
+    }
+
     .contacts input, textarea {
         width: 90% !important;
     }
