@@ -143,7 +143,6 @@ window.addEventListener("load", () => {
 
 
 function openCar(val) {
-    console.log(content.className.includes('display'));
     if (content.className.includes('display')) {
         content.className = "dropdown-content"
         return
